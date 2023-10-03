@@ -1,0 +1,58 @@
+# Lab 1: generative art
+
+# Log: 09/07/2023
+
+plugged in the raspberry pis to the computer and the power supply
+
+made 334 repo, folder raspberrypi, [ip.md](http://ip.md) 
+
+included ssh in raspberry pi config
+
+found ip address of raspberry pi: 172.29.133.118 and added it to ip.md
+
+now trying to understand how to write a bash script - reusable?
+
+uploadip.bashrc
+
+```bash
+#!/bin/bash
+
+hostname -I > ip.md
+git add .
+git commit -m "new ip"
+git push
+```
+
+eval `ssh-agent`
+
+maybe key is in hidden.sh
+
+shutdown -h now
+
+ok in AKW, the ip is now 172.29.27.89
+
+trying ssh student334@172.29.27.89
+
+try to copy over public key again
+
+if new key generated, make sure to have config file to the new key
+
+make sure to do ssh agent, eval, etc 
+
+can name new key 334
+
+dont have to delete old key just keep trying
+
+### progress with ssh key
+
+- tried to copy over public key again, but when creating, said key was already in use, so probably not the issue there with random hidden characters etc
+- now trying to generate new key
+    - Your identification has been saved in /home/student334/.ssh/334_key
+    Your public key has been saved in /home/student334/.ssh/334_key.pub
+- eval `ssh-agent` then added it to there
+- then added new public key to my github
+- then went into config (~/.ssh/config) and pointed it to the new 334_key
+- then i exited on my laptop and reboot on terminal in monitor
+- then ssh into raspberry pi
+    - ssh student334@172.29.27.89
+- still didn’t work

@@ -1,0 +1,45 @@
+# Lab 2
+
+on pi: into terminal
+
+- ssh-copy-id -i ~/.ssh/id_rsa.pub YOUR USERNAME@IPADDRESS
+
+then you can:
+
+- scp FILENAME YOUR_USER_NAME@IP_ADDRESS
+
+to check keys
+
+Outline (in text, in a document to be uploaded to our knowledge share page) the precise steps for using your SSH key (generated above) to automatically send files from your Pi to your Laptop using SCP. [net research]
+
+1. on laptop commandline: who am i → to get laptop username
+2. find ip address of laptop
+3. on pi, make a random file
+    1. ex. touch test.txt
+4. ssh-copy-id -i ~/.ssh/id_rsa.pub YOUR USERNAME@IPADDRESS
+5. scp FILENAME YOUR_USER_NAME@IP_ADDRESS/path 
+    1. if connection refused initially, might have to enable ssh on the laptop (on macs → system settings→ remote login)
+
+info for laptop:
+
+- username: maliakuo
+- ip address: 172.26.95.232
+
+making a random file on my pi
+
+- test.txt: pls work
+
+on the pi:
+
+- ssh-copy-id -i ~/.ssh/334_key.pub maliakuo@172.26.95.232
+- ssh-copy-id -i ~/.ssh/oldkey.pub maliakuo@172.26.95.232
+    - this one actually worked
+- entered my laptop password when prompted
+- ssh maliakuo@172.26.95.232
+    - puts me in my laptop
+- scp test.txt maliakuo@172.26.95.232:/Users/maliakuo/Desktop
+    - it worked thank god
+
+updates for running upload script
+
+- it works: bash uploadip.sh
