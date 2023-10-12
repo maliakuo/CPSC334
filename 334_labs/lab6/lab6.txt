@@ -1,0 +1,8 @@
+
+find MAC address of Raspberry Pi, ESP32, and laptop
+register on Yale Network Registration
+Connected circuit
+3.3->power->photoresistor ->gpio->resistor->gnd
+connect ESP32 to Raspberry Pi wirelessly using TCP or UDP
+Esp32 code -> python program on pi
+Visualized ooooo based on amount of light received by photoresistor 
