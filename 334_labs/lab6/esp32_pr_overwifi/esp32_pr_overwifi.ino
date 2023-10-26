@@ -35,19 +35,21 @@ udp.begin(udpServerPort);
 
 void loop() {
 int sensorValue = analogRead(pin); // Read the analog input
-Serial.println(sensorValue);
-// Data to be sent
-String message = "Hello, UDP Server!";
+  Serial.println(sensorValue);
+  // Data to be sent
+  String message = "Hello, UDP Server!";
 
 
-// Send the UDP packet
-udp.beginPacket(udpServerIP, udpServerPort);
-udp.print(sensorValue);
-udp.endPacket();
+  // Send the UDP packet
+  udp.beginPacket(udpServerIP, udpServerPort);
+  udp.print(sensorValue);
+  udp.endPacket();
 
 
-Serial.print("Allegedly sent: ");
-Serial.println(sensorValue);
+  Serial.print("Allegedly sent: ");
+  Serial.println(sensorValue);
+
+  delay(500);
 
 
 }
