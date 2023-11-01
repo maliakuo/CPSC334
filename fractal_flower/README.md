@@ -10,6 +10,7 @@ Fractal Flowers is an interactive piece of installation art, which displays chan
 ## Installation Instructions
 The arduino_message folder contains the arduino code to be uploaded to your ESP32
 - make sure to change the ip address to your laptop's ip 
+
 The fractal folder contains the processing code
 - to run the program, just press play and it should work. It may take a second to load because the background image is pretty big, but after that, it shouldn't have any issues
 
