@@ -28,7 +28,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  int beginPkt = Udp.beginPacket("172.29.133.19", 6100);
+  int beginPkt = Udp.beginPacket("172.29.27.90", 6100);
   Serial.println(String("begin packet: ") + beginPkt);
   String msg = String(analogRead(PHOTO_PIN)) + "+" + String(touchRead(TOUCH_PIN));
   // Serial.println(msg);
